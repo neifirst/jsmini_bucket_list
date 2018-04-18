@@ -8,6 +8,29 @@
   <title>Travel Bucket List</title>
 </head>
 <body>
+  <div class="container">
+    <form>
+      <label for="name">
+        Name
+        <select id="country-list">
+          <option disabled selected>Choose a Country</option>
+        </select>
+      <label for="landmarks">
+        Landmarks
+      </label>
+      <input type="text" id="landmarks" placeholder="landmarks" name="landmarks">
+      <label for="when">
+        When?
+      </label>
+      <input type="text" id="when" placeholder="when" name="when">
 
+      <button type="submit" id="submit-place">Submit</button>
+    </form>
+    <button id="deleteButton" type="submit">Delete All</button>
+  </div>
+  <div class="list-container">
+    <ul id="places_list">
+    </ul>
+  </div>
 </body>
 </html>
