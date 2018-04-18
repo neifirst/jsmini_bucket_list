@@ -3,7 +3,7 @@ const ListView = require('./views/listView');
 const Bucketlist = require('./models/bucketlist');
 const Request = require('./services/request.js');
 
-const mapView = new MapView();
+// const mapView = new MapView();
 const listView = new ListView();
 const bucketlist = new Bucketlist();
 const request1 = new Request('http://localhost:3000/api/bucketlist');
@@ -16,9 +16,9 @@ const getPlacesRequestComplete = function(allplaces){
   });
 }
 
-  const getCountriesRequestComplete = function(countries){
-    console.log(countries);
-    listView.populateSelect(countries);
+const getCountriesRequestComplete = function(countries){
+  console.log(countries);
+  listView.populateSelect(countries);
   }
 
 
