@@ -14,7 +14,7 @@ ListView.prototype.populateSelect = function(countries){
   displayFurtherInfo(countries);
 };
 
-const displayFurtherInfo = function () {
+const displayFurtherInfo = function (countries) {
   const selectedCountry = document.querySelector('select')
   selectedCountry.addEventListener('change', function() {
     let country = countries[this.value]
