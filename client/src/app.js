@@ -24,7 +24,6 @@ const getCountriesRequestComplete = function(countries){
 
 
 const appStart = function(){
-  debugger;
   request1.get(getPlacesRequestComplete);
   request2.get(getCountriesRequestComplete);
 

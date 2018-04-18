@@ -2,7 +2,7 @@ const ListView = function(){
   this.places = []
 };
 
-const populateSelect = function(countries){
+ListView.prototype.populateSelect = function(countries){
   const select = document.getElementById('country-list')
   countries.forEach(function(country, index) {
     let option = document.createElement('option')
