@@ -42,7 +42,6 @@ const submitComplete = function(response){
 
 const deleteAllButtonClicked = function(){
   request1.delete(deleteAllComplete);
-  debugger;
 }
 
 const deleteAllComplete = function(){
