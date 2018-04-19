@@ -1,7 +1,8 @@
-const MapView = require('./views/mapView');
+// const MapView = require('./views/mapView');
 const ListView = require('./views/listView');
 const Bucketlist = require('./models/bucketlist');
 const Request = require('./services/request.js');
+const MapMaker = require('./models/mapMaker.js');
 
 // const mapView = new MapView();
 const listView = new ListView();
@@ -55,8 +56,11 @@ const appStart = function(){
   const submitButton = document.querySelector('#submit-place');
   submitButton.addEventListener('click', submitButtonClicked);
   const deleteAllButton = document.querySelector('#deleteAllButton');
+  const container = document.querySelector('#world-map');
   deleteAllButton.addEventListener('click', deleteAllButtonClicked);
-
+  const center = {lat: 0, lng: 0};
+  const map = new MapMaker(container, center, 1);
+  // mapInit();
 }
 
 
