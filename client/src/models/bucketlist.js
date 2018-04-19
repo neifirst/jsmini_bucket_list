@@ -1,11 +1,15 @@
+
+
 var Bucketlist = function(){
   this.places_list = [];
 }
 
-Bucketlist.prototype.addPlace = function(place) {
-  this.places_list.push(place);
-  this.render(place);
+Bucketlist.prototype.addPlace = function(bucketlistObject) {
+
+  this.places_list.push(bucketlistObject);
 }
+
+
 
 Bucketlist.prototype.clear = function() {
   this.places_list = [];
@@ -13,13 +17,5 @@ Bucketlist.prototype.clear = function() {
   ul.innerHTML = '';
 }
 
-Bucketlist.prototype.render = function(place){
-    const ul = document.querySelector('#places_list');
-    const li = document.createElement('li');
-    const text = document.createElement('p');
-    text.innerText = `Location: ${place.name}`;
-    li.appendChild(text);
-    ul.appendChild(li);
-}
 
  module.exports = Bucketlist;

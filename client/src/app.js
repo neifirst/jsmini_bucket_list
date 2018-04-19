@@ -2,6 +2,7 @@ const ListView = require('./views/listView');
 const Bucketlist = require('./models/bucketlist');
 const Request = require('./services/request.js');
 const MapMaker = require('./models/mapMaker.js');
+const MapMaker = require('./models/mapMaker.js');
 
 const listView = new ListView();
 const bucketlist = new Bucketlist();
@@ -23,7 +24,7 @@ const getCountriesRequestComplete = function(countries){
 
 const submitButtonClicked = function(event){
   event.preventDefault();
-  const nameInputValue = document.querySelector('#country-list');
+  const nameInputValue = document.querySelector('#country-list').value;
   const landmarksInputValue = document.querySelector('#landmarks').value;
   const whenInputValue = document.querySelector('#when').value;
 
@@ -40,6 +41,7 @@ const submitComplete = function(response){
   bucketlist.addPlace(response);
   listView.renderInfo(response);
 }
+
 
 const deleteAllButtonClicked = function(){
   request1.delete(deleteAllComplete);
