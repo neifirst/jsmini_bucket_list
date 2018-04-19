@@ -45,6 +45,10 @@ const deleteOneButtonClicked = function(){
   request1.delete(deleteOneComplete);
 }
 
+const deleteOneComplete = function(place){
+  bucketlist.remove(place);
+}
+
 const deleteAllButtonClicked = function(){
   request1.delete(deleteAllComplete);
 }

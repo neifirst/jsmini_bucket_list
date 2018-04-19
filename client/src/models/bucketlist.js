@@ -17,5 +17,10 @@ Bucketlist.prototype.clear = function() {
   ul.innerHTML = '';
 }
 
+Bucketlist.prototype.remove = function (place) {
+  this.places_list.splice()
+
+};
+
 
  module.exports = Bucketlist;
