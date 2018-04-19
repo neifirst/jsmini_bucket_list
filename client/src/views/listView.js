@@ -27,6 +27,9 @@ ListView.prototype.renderInfo = function(bucketlistObject){
     const ul2 = document.createElement('ul');
     const li2 = document.createElement('li');
     const li3 = document.createElement('li');
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-one');
+    const t = document.createTextNode("remove");
     li1.innerText = `Location: ${bucketlistObject.name}`;
     li1.classList.add("firstli");
     li2.innerText = `Landmarks: ${bucketlistObject.landmarks}`;
@@ -35,6 +38,8 @@ ListView.prototype.renderInfo = function(bucketlistObject){
     li1.appendChild(ul2);
     ul2.appendChild(li2);
     ul2.appendChild(li3);
+    deleteButton.appendChild(t);
+    ul1.appendChild(deleteButton);
 }
 
 

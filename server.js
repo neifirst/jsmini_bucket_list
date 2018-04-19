@@ -86,6 +86,23 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client) {
     })
   })
 
+  app.delete("/api/bucketlist/:id", function(req,res){
+    const placesCollection = db.collection("places_list");
+    const objectID = ObjectID(req.params.id);
+    const filterObject = {_id: objectID};
+
+    placesCollection.deleteOne(filterObject, function(err,result){
+      if(err){
+        console.log(err);
+        res.status(500);
+        res.send();
+      }
+      console.log("delete successful");
+      res.status(204);
+      res.json(result);
+    })
+  })
+
 
 
   app.listen(3000, function () {
