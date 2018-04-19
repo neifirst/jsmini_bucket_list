@@ -1,8 +1,8 @@
-const container = document.querySelector('#country-map');
+const container = document.querySelector('#world-map');
 
-const MapMaker = function(container, lat, long, zoom) {
+const MapMaker = function(container, latlng, zoom) {
   this.googleMap = new google.maps.Map(container, {
-    center: {lat: lat, lng: long},
+    center: {latlng},
     zoom: zoom
   });
   this.markers = []
