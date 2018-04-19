@@ -1,10 +1,8 @@
-// const MapView = require('./views/mapView');
 const ListView = require('./views/listView');
 const Bucketlist = require('./models/bucketlist');
 const Request = require('./services/request.js');
 const MapMaker = require('./models/mapMaker.js');
 
-// const mapView = new MapView();
 const listView = new ListView();
 const bucketlist = new Bucketlist();
 const request1 = new Request('http://localhost:3000/api/bucketlist');
@@ -14,12 +12,13 @@ const getPlacesRequestComplete = function(allplaces){
   console.log(allplaces);
   allplaces.forEach(function(place){
     bucketlist.addPlace(place);
+    listView.renderInfo(place);
   });
 }
 
 const getCountriesRequestComplete = function(countries){
   console.log(countries);
-  listView.populateSelect(countries);
+  listView.populateCountriesList(countries);
   }
 
 const submitButtonClicked = function(event){
@@ -39,6 +38,7 @@ const submitButtonClicked = function(event){
 
 const submitComplete = function(response){
   bucketlist.addPlace(response);
+  listView.renderInfo(response);
 }
 
 const deleteAllButtonClicked = function(){
@@ -56,11 +56,10 @@ const appStart = function(){
   const submitButton = document.querySelector('#submit-place');
   submitButton.addEventListener('click', submitButtonClicked);
   const deleteAllButton = document.querySelector('#deleteAllButton');
-  const container = document.querySelector('#world-map');
   deleteAllButton.addEventListener('click', deleteAllButtonClicked);
+  const container = document.querySelector('#world-map');
   const center = {lat: 0, lng: 0};
   const map = new MapMaker(container, center, 1);
-  // mapInit();
 }
 
 
