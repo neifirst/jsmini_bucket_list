@@ -2,7 +2,6 @@ const ListView = require('./views/listView');
 const Bucketlist = require('./models/bucketlist');
 const Request = require('./services/request.js');
 const MapMaker = require('./models/mapMaker.js');
-const MapMaker = require('./models/mapMaker.js');
 
 const listView = new ListView();
 const bucketlist = new Bucketlist();

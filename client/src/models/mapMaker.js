@@ -12,7 +12,7 @@ MapMaker.prototype.addMarker = function (lat, lng) {
   const lat = country.latlng[0];
   const lng = country.latlng[1];
   const marker = new google.maps.Marker({
-    position: {lat: lat, lng: lng}
+    position: {lat: lat, lng: lng},
     map: this.googleMap
   })
   this.markers.push(marker)

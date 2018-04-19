@@ -28,8 +28,9 @@ ListView.prototype.renderInfo = function(bucketlistObject){
     const li2 = document.createElement('li');
     const li3 = document.createElement('li');
     li1.innerText = `Location: ${bucketlistObject.name}`;
+    li1.classList.add("firstli");
     li2.innerText = `Landmarks: ${bucketlistObject.landmarks}`;
-    li3.innerText = `When?: ${bucketlistObject.when}`;
+    li3.innerText = `When: ${bucketlistObject.when}`;
     ul1.appendChild(li1);
     li1.appendChild(ul2);
     ul2.appendChild(li2);
