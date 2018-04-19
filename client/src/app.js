@@ -2,7 +2,6 @@ const ListView = require('./views/listView');
 const Bucketlist = require('./models/bucketlist');
 const Request = require('./services/request.js');
 const MapMaker = require('./models/mapMaker.js');
-const MapMaker = require('./models/mapMaker.js');
 
 const listView = new ListView();
 const bucketlist = new Bucketlist();
@@ -42,6 +41,9 @@ const submitComplete = function(response){
   listView.renderInfo(response);
 }
 
+const deleteOneButtonClicked = function(){
+  request1.delete(deleteOneComplete);
+}
 
 const deleteAllButtonClicked = function(){
   request1.delete(deleteAllComplete);
@@ -59,6 +61,7 @@ const appStart = function(){
   submitButton.addEventListener('click', submitButtonClicked);
   const deleteAllButton = document.querySelector('#deleteAllButton');
   deleteAllButton.addEventListener('click', deleteAllButtonClicked);
+  const deleteOneButton = ('click', deleteOneButtonClicked);
   const container = document.querySelector('#world-map');
   const center = {lat: 0, lng: 0};
   const map = new MapMaker(container, center, 1);
